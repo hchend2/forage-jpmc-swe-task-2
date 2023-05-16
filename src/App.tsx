@@ -51,10 +51,10 @@ class App extends Component<{}, IState> {
 getDataFromServer() {
     let x = 0;
     const interval = setInterval(() => {
-        DataStreamer.getData((serverResponds: serverRespond[]) => {
+        DataStreamer.getData((serverResponds: ServerRespond[]) => {
             this.setState({
                 data: serverResponds,
-                showGraph: true;
+                showGraph: true,
             });
         });
         x++;
@@ -82,7 +82,7 @@ getDataFromServer() {
             // or the server does not return anymore data.
             onClick={() => {this.getDataFromServer()}}>
             Start Streaming Data
-          <button className="btn btn-primary Stream-button"> // some changes made ...
+          </button>
           <div className="Graph">
             {this.renderGraph()}
           </div>
